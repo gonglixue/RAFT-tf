@@ -23,7 +23,7 @@ CUDA 10.1
 
 ## Demo
 
-1. Download the pretrained model from [GoogleDrive]() to `release_weight` folder. The *.npz files are converted from the official pytorch *.pth model provided in the [official repository](https://github.com/princeton-vl/RAFT).
+1. Download the pretrained model from [GoogleDrive](https://drive.google.com/drive/folders/1bADRWZm87kfbcv2_YOfleyH2LREZH0Bp?usp=sharing) to `release_weight` folder. The *.npz files are converted from the official pytorch *.pth model provided in the [official repository](https://github.com/princeton-vl/RAFT).
 
 2. Run the inference demo:
 ```
