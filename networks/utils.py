@@ -75,10 +75,18 @@ def tf_grid_sample(img, coords):
     y1 = tf.cast(y1, tf.float32)
 
     # calculate deltas
-    wa = (x1 - x) * (y1 - y)
-    wb = (x1 - x) * (y - y0)
-    wc = (x - x0) * (y1 - y)
-    wd = (x - x0) * (y - y0)
+    # wa = (x1 - x) * (y1 - y)
+    # wb = (x1 - x) * (y - y0)
+    # wc = (x - x0) * (y1 - y)
+    # wd = (x - x0) * (y - y0)
+    # will cause problems on border
+
+    qx = x1 - x
+    qy = y1 - y
+    wa = qx * qy
+    wb = qx * (1.0 - qy)
+    wc = (1.0 - qx) * qy
+    wd = (1.0 - qx) * (1.0 - qy)
 
     # add dimension for addition
     wa = tf.expand_dims(wa, axis=3)
